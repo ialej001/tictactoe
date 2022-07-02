@@ -24,7 +24,7 @@ class Board extends React.Component {
 
     // ignore further clicks after winner is declared
     if (calculateWinner(squares) || squares[i]) {
-        return;
+      return;
     }
 
     squares[i] = this.state.xIsNext ? "X" : "O";
@@ -43,13 +43,12 @@ class Board extends React.Component {
   render() {
     const winner = calculateWinner(this.state.squares);
     let status;
-    
+
     if (winner) {
-        status = 'Winner: ' + winner;
+      status = "Winner: " + winner;
     } else {
-        status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
-    
 
     return (
       <div>
@@ -75,6 +74,18 @@ class Board extends React.Component {
 }
 
 class Game extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      history: [
+        {
+          squares: Array(9).fill(null)
+        }
+      ],
+      xIsNext: true
+    };
+  }
+
   render() {
     return (
       <div className="game">
