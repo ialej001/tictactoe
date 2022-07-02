@@ -35,7 +35,15 @@ class Board extends React.Component {
   }
 
   render() {
-    const status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+    const winner = calculateWinner(this.state.squares);
+    let status;
+    
+    if (winner) {
+        status = 'Winner: ' + winner;
+    } else {
+        status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+    }
+    
 
     return (
       <div>
@@ -98,6 +106,7 @@ function calculateWinner(squares) {
 
   return null;
 }
+
 // ========================================
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
