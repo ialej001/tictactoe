@@ -61,7 +61,7 @@ class Game extends React.Component {
     // discard 'future' moves if user uses timetravel feature
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[this.state.stepNumber];
-    const squares = this.state.squares.slice();
+    const squares = current.squares.slice();
 
     // ignore further clicks after winner is declared
     if (calculateWinner(squares) || squares[i]) {
@@ -85,7 +85,7 @@ class Game extends React.Component {
 
   render() {
     const history = this.state.history;
-    const current = this.state.history[history.length - 1];
+    const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
     let status;
 
