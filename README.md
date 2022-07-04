@@ -4,7 +4,7 @@ Bootstrapped with [Create React App](https://github.com/facebook/create-react-ap
 
 ## Screenshot
 
-<img src="https://ibb.co/wKDv9fP"></img>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/hKpqPS4/tictactoe-screenshot.png" alt="tictactoe-screenshot" border="0"></a>
 
 ## Available Scripts
 
